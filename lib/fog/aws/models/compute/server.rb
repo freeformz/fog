@@ -120,6 +120,10 @@ module Fog
           @private_key ||= private_key_path && File.read(private_key_path)
         end
 
+        def private_key=(key_data)
+          @private_key = key_data
+        end
+
         def public_key_path
           @public_key_path ||= Fog.credentials[:public_key_path]
           @public_key_path &&= File.expand_path(@public_key_path)
@@ -127,6 +131,10 @@ module Fog
 
         def public_key
           @public_key ||= public_key_path && File.read(public_key_path)
+        end
+
+        def public_key=(key_data)
+          @public_key = key_data
         end
 
         def ready?
