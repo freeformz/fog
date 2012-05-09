@@ -129,10 +129,6 @@ module Fog
           @public_key_path &&= File.expand_path(@public_key_path)
         end
 
-        def public_key
-          @public_key ||= public_key_path && File.read(public_key_path)
-        end
-
         def public_key=(key_data)
           @public_key = key_data
         end
